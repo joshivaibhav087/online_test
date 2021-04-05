@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel='stylesheet' href="{% static 'css/quiz1.css' %}">
+<div class="container-fluid">
+<div class="row">
+<div class="col-12 mx-auto my-4">
+    <div class="card border-info p-5">
+        <div class=" h4 alert alert-success text-center" role="alert">Python test</div>
+        <form action="." method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <ul class="quiz">
+  <li>
+    <h4>1. Who developed the Python language?</h4>
+    <ul class="choices">
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="A" required><span>Zim Den</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="ans1" ><span>Guido van Rossum</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="Abc" ><span>Niene Stom</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="Abcd" ><span>Wick van Rossum</span></label></li>
+    
+    </ul>
+  </li><br>
+  <li>
+    <h4>2. In which year was the Python language developed?</h4>
+    <ul class="choices">
+            <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault1" value="A" required><span>1987</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault1" value="ans2"><span>1989</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault1" value="Abc"><span>1991</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault1" value="Abcd"><span>1986</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>3. What do we use to define a block of code in Python language?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Aa" required><span>Keys</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="ans3"><span>Indentation</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Ac"><span>Brackets</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Ad"><span>None of these</span></label></li>
+
+    </ul>
+  </li><br>
+   <li>
+    <h4>4. Which character is used in Python to make a single line comment?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Aa" required><span>/</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Ab"><span>//</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="ans4"><span>#</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Ad"><span>/**/</span></label></li>
+
+    </ul>
+  </li><br>
+   <li>
+    <h4>5. What is the method inside the class in python language?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="Aa" required><span>Object</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="Ab"><span>Attribute</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="ans5"><span>Function</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="Ad"><span>Argument</span></label></li>
+
+    </ul>
+  </li><br>
+   <li>
+    <h4>6. Which of the following declarations is incorrect?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="Aa" required><span>_x = 2</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="Ab"><span>__x = 5</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="Ac"><span>__x__ = 5</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="ans6"><span>None Of these</span></label></li>
+
+    </ul>
+  </li><br>
+   <li>
+    <h4>7. Which of the following is not a keyword in Python language?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="ans7" required><span>val</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="Ab"><span>raise</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="Ac"><span>try</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="Ad"><span>with</span></label></li>
+
+    </ul>
+  </li><br>
+   <li>
+    <h4>8. Which of these in not a core data type?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Aa" required><span>set</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="ans8"><span>class</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Ac"><span>dictionary</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Ad"><span>list</span></label></li>
+
+    </ul>
+  </li><br>
+   <li>
+    <h4>9. What is the return type of function id?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="ans9" required><span>int</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="Ab"><span>str</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="Ac"><span>dict</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="Ad"><span>float</span></label></li>
+
+    </ul>
+  </li><br>
+   <li>
+    <h4>10. What data type is the object below?<br> L = [1, 23, 'hello', 1]</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="Aa" required><span>Dictionary</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="ans10"><span>List</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="Ac"><span>Array</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="Ad"><span>Tuple</span></label></li>
+
+    </ul>
+  </li><br>
+</ul>
+
+<input type="submit" class= "btn btn-info">
+</div>
+</div>
+</div>
+</div>
+</form>
+
+{% endblock content %}

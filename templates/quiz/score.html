@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">  
+            
+            <div class="col-6 mx-auto ">
+            <div class="card" style="width: 30rem; margin-top:30px;">
+            <div class=" h4 alert alert-success text-center" role="alert">Your Score</div>
+            <div class="card-text h4 bg-success text-center" id="python">python score: {{ score.python }}%</div>
+            <div class="card-text h4 bg-info text-center" id="java">java score: {{ score.java }}%</div>
+            <div class="card-text h4 bg-success text-center" id="c">C score: {{ score.c }}%</div>
+
+        <a href="{% url 'account:home' %}" class="btn btn-info">home</a>
+        </div>
+        </div>
+        </div>
+        </div>
+{% endblock content %}
+
+         
+{% comment %} <script>
+window.onload = function () {
+    var p = document.getElementById['python']
+    var j = document.getElementById['java']
+    var c = document.getElementById['c']
+	
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	
+	title:{
+		text:"your score"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Percent"
+	},
+	data: [{
+		type: "bar",
+		name: "company",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: 20, label: "python" },
+			{ y: 70, label: "java" },
+			{ y: 90, label: "C" },
+			
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+
+<div id="chartContainer" style="height: 370px; width: 50%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+ {% endcomment %}

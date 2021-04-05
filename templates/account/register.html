@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-6 mx-auto my-5 ">
+    <div class="card border-info p-5">
+        <div class=" h4 alert alert-success text-center" role="alert">User Registration</div>
+        <form action="." method="post" class="needs-validation" enctype="multipart/form-data" name="reg_form" onsubmit="return validateForm()" novalidate>
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleusername" class="form-label">Username</label>
+              <input type="text" class="form-control" name="username" id="exampleusername" aria-describedby="emailHelp" required>
+              <div id="user"></div>
+            </div>
+            <div class="mb-3">
+                <label for="examplefirstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="examplefirstname" aria-describedby="emailHelp" required>
+                <div id="fname"></div>
+              </div>
+            <div class="mb-3">
+              <label for="exampleInputlastname" class="form-label">Last Name</label>
+              <input type="text" class="form-control" name="last_name" id="exampleInputlastname" required>
+              <div id="lname"></div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email1" id="exampleInputEmail" onsubmit="checkEmail();" required>
+                <div id="email2"></div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPhone" class="form-label">Phone No</label>
+                <input type="number" class="form-control" name="phone" id="exampleInputPhone" required>
+                <div id="phone"></div>
+              </div>
+               <div class="mb-3">
+                <label for="exampleInputProfile" class="form-label">id proof</label>
+                <input type="file" class="form-control" name="idproof" id="exampleInputProfile" required>
+                <div id="idprof"></div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword" required>
+                <div id="pass"></div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" name="password1" id="exampleInputPassword1" required>
+                <div id="pass1"></div>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+    </div>
+</div>
+
+<script>
+
+function validateForm() {
+  var x = document.forms["reg_form"]["username"].value;
+  var y = document.forms["reg_form"]["first_name"].value;
+  var z = document.forms["reg_form"]["last_name"].value;
+  var a = document.forms["reg_form"]["email1"].value;
+  var b = document.forms["reg_form"]["phone"].value;
+  var q = document.forms["reg_form"]["idproof"].value;
+  var r = document.forms["reg_form"]["password"].value;
+  var s = document.forms["reg_form"]["password1"].value;
+  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var filter2  = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+  if (x == "") {
+    document.getElementById("exampleusername").style.border = "2px solid red";
+    document.getElementById("user").innerHTML = "**enter username";
+    return false;
+  }
+  
+  if (y == "") {
+    document.getElementById("examplefirstname").style.border = "2px solid red";
+    document.getElementById("fname").innerHTML = "**enter first name";
+    return false;
+  }
+  if (z == "") {
+    document.getElementById("exampleInputlastname").style.border = "2px solid red";
+    document.getElementById("lname").innerHTML = "**enter last name";
+    return false;
+  }
+  if (a == "") {
+    document.getElementById("exampleInputEmail").style.border = "2px solid red";
+    document.getElementById("email2").innerHTML = "**enter email id";
+    return false;
+  }
+  if (!filter.test(a)){
+    document.getElementById("exampleInputEmail").style.border = "2px solid red";
+    document.getElementById("email2").innerHTML = "**invalid email";
+    a.focus;
+    return false;
+  }
+  
+  if (b == "") {
+    document.getElementById("exampleInputPhone").style.border = "2px solid red";
+    document.getElementById("phone").innerHTML = "**enter phone no.";
+    return false;
+}
+if (q == "") {
+    document.getElementById("exampleInputProfile").style.border = "2px solid red";
+    document.getElementById("idprof").innerHTML = "**enter upload your id";
+    return false;
+  }
+if (r == "") {
+    document.getElementById("exampleInputPassword").style.border = "2px solid red";
+    document.getElementById("pass").innerHTML = "**set password";
+    return false;
+  }
+  if (r.length < 8) {
+    document.getElementById("exampleInputPassword").style.border = "2px solid red";
+    document.getElementById("pass").innerHTML = "**password must be atleast 8 characters";
+    return false;
+  }
+  if (r.length > 16) {
+    document.getElementById("exampleInputPassword").style.border = "2px solid red";
+    document.getElementById("pass").innerHTML = "**password must be max 15 characters";
+    return false;
+  }
+  if (s == "") {
+    document.getElementById("exampleInputPassword1").style.border = "2px solid red";
+    document.getElementById("pass1").innerHTML = "**confirm password";
+    return false;
+  }
+  if (s != r) {
+    document.getElementById("exampleInputPassword1").style.border = "2px solid red";
+    document.getElementById("pass1").innerHTML = "**password not matched";
+    return false;
+  }
+  if(!filter2.test(r)){
+    document.getElementById("exampleInputPassword1").style.border = "2px solid red";
+    document.getElementById("pass").innerHTML = "**password not safe";
+    r.focus;
+    return false;
+
+  }
+}
+
+var firebaseConfig = {
+  apiKey: '<your-api-key>',
+  authDomain: '<your-auth-domain>',
+  databaseURL: '<your-database-url>',
+  storageBucket: '<your-storage-bucket-url>'
+};
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the storage service, which is used to create references in your storage bucket
+var storage = firebase.storage();
+ 
+</script>
+{% endblock content %}

@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel='stylesheet' href="{% static 'css/quiz1.css' %}">
+<div class="col-12 mx-auto my-5 ">
+    <div class="card border-info p-5">
+        <div class=" h4 alert alert-success text-center" role="alert">C test</div>
+        <form action="." method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <ul class="quiz">
+          <li>
+            <h4>1. Which of the declaration is correct?</h4>
+            <ul class="choices">
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="ans1"><span>int length;</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="Ab"><span>char int;</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="Abc"><span>int long;</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="Abcd"><span>float double;</span></label></li>
+            
+            </ul>
+          </li><br>
+          <li>
+            <h4>2. Which of the following correctly represents a long double constant?</h4>
+            <ul class="choices">
+                    <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault2" value="A"><span>6.68</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault2" value="ans2"><span>6.68L</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault2" value="Abc"><span>6.68f</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault2" value="Abcd"><span>6.68LF</span></label></li>
+
+            </ul>
+          </li><br>
+          <li>
+            <h4>3. Point out the error in the following program (if it is compiled with Turbo C compiler)?<br><br><pre style="margin-left:50px;">
+int main()
+{
+    display();
+    return 0;
+}
+void display()
+{
+    printf("IndiaBIX.com");
+}</pre></h4>
+            <ul class="choices">
+                <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Aa"><span>No error</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Ab"><span>display() doesn't get invoked</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="ans3"><span>display() is called before it is defined</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Ad"><span>None of these</span></label></li>
+
+            </ul>
+          </li><br>
+          <li>
+            <h4>4. What will be the output of the program in 16 bit platform (Turbo C under DOS)?<br><br><pre style="margin-left:50px;">int main()
+{
+    extern int i;
+    i = 20;
+    printf("%d\n", sizeof(i));
+    return 0;
+}</h4>
+            <ul class="choices">
+                <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Aa"><span>2</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Ab"><span>4</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Ac"><span>	vary from compiler</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="ans4"><span>Linker Error : Undefined symbol 'i'</span></label></li>
+
+            </ul>
+          </li><br>
+          <li>
+            <h4>5. Which of the following operations are INCORRECT?</h4>
+            <ul class="choices">
+                <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="Aa"><span>int i = 35; i = i%5;</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="Ab"><span>short int j = 255; j = j;</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="Ac"><span>long int k = 365L; k = k;</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="ans5"><span>float a = 3.14; a = a%3;</span></label></li>
+
+            </ul>
+          </li><br>
+          <li>
+            <h4>6. Point out the error in the following program.?<br><br><pre style="margin-left:50px;">int main()
+{
+    void v = 0;
+
+    printf("%d", v);
+
+    return 0;
+}</pre></h4>
+            <ul class="choices">
+                <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="ans6"><span>Error: Declaration syntax error 'v' (or) Size of v is unknown or zero.</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="Ab"><span>Program terminates abnormally.</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="Ac"><span>No error.</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="Ad"><span>None of these.</span></label></li>
+
+            </ul>
+          </li><br>
+          <li>
+            <h4>7. What is required in each C program?</h4>
+            <ul class="choices">
+                <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="ans7"><span>The program must have at least one function.</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="Ab"><span>The program does not require any function.</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="Ac"><span>Input data</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="Ad"><span>Output data</span></label></li>
+
+            </ul>
+          </li><br>
+          <li>
+            <h4>8. What is the output of this statement "printf("%d", (a++))"?</h4>
+            <ul class="choices">
+                <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Aa"><span>The value of (a + 1)</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="ans8"><span>The current value of a</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Ac"><span>Error message</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Ad"><span>Garbage</span></label></li>
+
+            </ul>
+          </li><br>
+          <li>
+            <h4>9. Why is a macro used in place of a function?</h4>
+            <ul class="choices">
+                <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="Aa"><span>It reduces execution time.</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="Ab"><span>It reduces code size.</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="Ac"><span>It increases execution time.</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="ans9"><span>It increases code size.</span></label></li>
+
+            </ul>
+          </li><br>
+          <li>
+            <h4>10. What will be the output of below code?<br><br><pre style="margin-left:50px;">int main()  
+    {  
+        int *ptr, a = 10;  
+        ptr = &a;  
+        *ptr += 1;  
+        printf("%d,%d/n", *ptr, a);  
+    } </h4>
+            <ul class="choices">
+                <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="Aa"><span>10, 10</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="Ab"><span>10, 11</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="Ac"><span>11, 10</span></label></li>
+              <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="ans10"><span>11, 11</span></label></li>
+
+            </ul>
+          </li><br>
+        </ul>
+
+        <input type="submit" class= "btn btn-info">
+        </div>
+        </div>
+</form>
+
+{% endblock content %}

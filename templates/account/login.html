@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="col-6 mx-auto my-5 ">
+        <div class="card border-info p-5">
+            <div class=" h4 alert alert-success text-center" role="alert">Login</div>
+            <form action="." method="post" name="login_form" enctype="multipart/form-data" onsubmit="return validateForm()" novalidate>
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">User Name</label>
+        <input type="text" class="form-control" name="username" id="formGroupExampleInput" placeholder="User name">
+        <div id="usern"></div>
+    </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="formGroupExamplepass" placeholder="Password">
+        <div id="pass"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">login</button>
+      </form>
+      </div>
+      </div>
+
+    <script>
+      function validateForm(){
+      var x = document.forms["login_form"]["username"].value;
+      var y = document.forms["login_form"]["password"].value;
+
+      if (x== ""){
+        document.getElementById("formGroupExampleInput").style.border = "2px solid red";
+        document.getElementById("usern").innerHTML = "**enter username";
+        return false;
+      }
+      if (y == ""){
+        document.getElementById("formGroupExamplepass").style.border = "2px solid red";
+        document.getElementById("pass").innerHTML = "**enter password";
+        return false;
+      }
+      }
+    </script>
+
+{% endblock content %}

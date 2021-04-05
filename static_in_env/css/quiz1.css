@@ -1,0 +1,39 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: sans-serif;
+    padding: 1rem;
+  }
+  
+  .quiz,
+  .choices {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .choices li {
+    margin-bottom: 5px;
+  }
+  
+  .choices label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .choices label,
+  input[type="radio"] {
+    cursor: pointer;
+  }
+  
+  input[type="radio"] {
+    margin-right: 8px;
+  }
+
+  

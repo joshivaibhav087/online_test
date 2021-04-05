@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel='stylesheet' href="{% static 'css/quiz1.css' %}">
+<div class="col-12 mx-auto my-4">
+    <div class="card border-info p-3">
+        <div class=" h4 alert alert-success text-center" role="alert">Java test</div>
+        <form action="." method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <ul class="quiz">
+  <li>
+    <h4>1. Which of the following option leads to the portability and security of Java?</h4>
+    <ul class="choices">
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="A"><span>The applet makes the Java code secure and portable</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="Ab"><span>Use of exception handling</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="ans1"><span>Bytecode is executed by JVM</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question1" id="flexRadioDefault1" value="Abcd"><span>Dynamic binding between objects</span></label></li>
+    
+    </ul>
+  </li><br>
+  <li>
+    <h4>2. Which of the following is not a Java features?</h4>
+    <ul class="choices">
+            <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault1" value="A"><span>Dynamic</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault1" value="B"><span>Architecture neutral</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault1" value="ans2"><span>use of pointers</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question2" id="flexRadioDefault1" value="Abcd"><span>object-oriented</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>3. In java byte,short,int and long all these are?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Aa"><span>unsigned</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="ans3"><span>signed</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Ac"><span>both of the above</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question3" id="flexRadioDefault1" value="Ad"><span>none of the above</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>4. Size of 'int' in java is?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Aa"><span>16 bit</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="ans4"><span>32 bit</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Ac"><span>64 bit</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question4" id="flexRadioDefault1" value="Ad"><span>none of the above</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>5. the smallest integer type is _______ and its size is ___ ?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="Aa"><span>short,8</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="X"><span>short,16</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="ans5"><span>byte,8</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question5" id="flexRadioDefault1" value="Ad"><span>byte,16</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>6. What will be the output of the following program?<br><br><pre style="margin-left:50px;">public class Test {  
+public static void main(String[] args) {  
+    int count = 1;  
+    while (count <= 15) {  
+    System.out.println(count % 2 == 1 ? "***" : "+++++");  
+    ++count;  
+        }      // end while  
+    }       // end main   
+ }</pre></h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="Aa"><span>15 times ***</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="an"><span>15 times +++++</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="ans6"><span>8 times *** and 7 times +++++</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question6" id="flexRadioDefault1" value="Ad"><span>Both will print only once</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>7. Which of the following for loop declaration is not valid?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="ans7"><span>for ( int i = 99; i >= 0; i / 9 )</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="a"><span>for ( int i = 7; i <= 77; i += 7 )</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="Ac"><span>for ( int i = 20; i >= 2; - -i )</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question7" id="flexRadioDefault1" value="Ad"><span>for ( int i = 2; i <= 20; i = 2* i )</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>8. In which process, a local variable has the same name as one of the instance variables?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Aa"><span>Serialization</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="ans8"><span>Variable Shadowing</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Ac"><span>Abstraction</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question8" id="flexRadioDefault1" value="Ad"><span>Multi-threading</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>9. In which memory a String is stored, when we create a string using new operator?</h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="Aa"><span>Stack</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="anq"><span>String memory</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="ans9"><span>Heap memory</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question9" id="flexRadioDefault1" value="Ad"><span>Random storage space</span></label></li>
+
+    </ul>
+  </li><br>
+  <li>
+    <h4>10. What will be the output of the following program?<br><br><pre style="margin-left:50px;">public class Test2 {  
+    public static void main(String[] args) {  
+        StringBuffer s1 = new StringBuffer("Complete");  
+        s1.setCharAt(1,'i');  
+        s1.setCharAt(7,'d');  
+        System.out.println(s1);  
+     }  
+ } </pre></h4>
+    <ul class="choices">
+         <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="Aa"><span>Complete</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="az"><span>Iomplede</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="ans10"><span>Cimpletd</span></label></li>
+      <li><label class="form-check-label" for="flexRadioDefault1"><input class="form-check-input" type="radio" name="question10" id="flexRadioDefault1" value="Ad"><span>Coipletd</span></label></li>
+
+    </ul>
+  </li><br>
+</ul>
+
+<input type="submit" class= "btn btn-info">
+</div>
+</div>
+</form>
+
+{% endblock content %}
