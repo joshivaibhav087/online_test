@@ -22,7 +22,7 @@ firebaseConfig = {
 'storageBucket': "online-test-83d73.appspot.com",
 'messagingSenderId': "674632990124",
 'appId': "1:674632990124:web:0f66cb8b7b5b558e71ce09",
-'measurementId': "G-8C84V7GKYN"
+'measurementId': "G-8C84V7GKYN",
 }
 firebase = pyrebase.initialize_app(firebaseConfig)
 database = firebase.database()
@@ -70,9 +70,9 @@ def python_view(request):
         output = my_formatter.format(percentage)
         result = Quiz(user = request.user, python=output)
         result.save()
-        data = {"python score":result.python}
+        data = {"python result":result.python}
         data2 = json.dumps(data)
-        database.child("users").child("details").set(data2)
+        database.child("users").child("python").child(result.user).push(data2)
         return redirect("/quiz/java/")
         
     return render(request, "quiz/python_quiz.html")
@@ -119,7 +119,7 @@ def java_view(request):
         result.save()
         data = {"java score":result.java}
         data2 = json.dumps(data)
-        database.child("users").child("details1").set(data2)
+        database.child("users").child("java").child(result.user).push(data2)
         return redirect("/quiz/c/")
     return render(request, "quiz/java_quiz.html")
 
@@ -167,7 +167,7 @@ def c_view(request):
         data2 = json.dumps(data)
         # final_data = data2.replace('\\','"')
         # print(final_data)
-        database.child("users").child("details2").set(data2)
+        database.child("users").child("c").child(result.user).push(data2)
         pk = request.user.id
         return redirect(f"/quiz/score/{pk}/")
     return render(request, "quiz/c_quiz.html")
